@@ -1,5 +1,6 @@
-  <bl-book-list *ngIf="viewState==='list'" (showDetailsEvent)="showDetails($event)"></bl-book-list>
+<div class="ui menu">
+  <a routerLink="home" routerLinkActive="active" class="item">Home</a>
+  <a routerLink="books" routerLinkActive="active" class="item">Bücher</a>
+</div>
 
-  <bl-book-details *ngIf="viewState=== 'details'" (showListEvent)="showList($event)" [book]="book"></bl-book-details>
-  <router-outlet></router-outlet>
-
+<router-outlet></router-outlet>

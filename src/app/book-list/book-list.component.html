@@ -1,4 +1,14 @@
 <div class="ui middle aligned selection divided list">
 <bl-book-list-item class="item"
-*ngFor="let b of books" [book]="b" (click)="showDetails(b)"></bl-book-list-item>
+*ngFor="let b of books" [book]="b" [routerLink]="b.isbn"></bl-book-list-item>
 </div>
+
+<div class="ui active dimmer" *ngIf="!books">
+  <div class="ui large text loader">
+  Daten werden geladen...
+  </div>
+</div>
+
+<p *ngIf="books && !books.length">
+  Es wurden noch keine Bücher eingetragen.
+</p>
